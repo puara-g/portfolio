@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
+
+/*
+  Design tokens
+  -------------
+  Direction: same "quiet editor" identity as before, inverted to a bright
+  workspace — a cool, blue-cast paper white (not a warm cream) with the same
+  restrained periwinkle accent. Mono (JetBrains Mono) stays reserved for
+  structural/meta text so it still reads as "code metadata".
+*/
+
+:root {
+  --color-bg: #fafbfc;
+  --color-bg-elevated: #ffffff;
+  --color-bg-elevated-hover: #f1f3f5;
+  --color-border: #e4e7eb;
+  --color-border-strong: #d3d8de;
+  --color-text: #14171b;
+  --color-text-muted: #5b6169;
+  --color-text-faint: #8a9099;
+  --color-accent: #2f5fd9;
+  --color-accent-dim: #e8eefc;
+  --color-accent-warm: #c9860b;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-elevated-hover: var(--color-bg-elevated-hover);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-faint: var(--color-text-faint);
+  --color-accent: var(--color-accent);
+  --color-accent-dim: var(--color-accent-dim);
+  --color-accent-warm: var(--color-accent-warm);
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --breakpoint-xs: 30rem;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent-dim);
+  color: var(--color-text);
+}
+
+/* Visible keyboard focus, kept even where components remove the default ring */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility: mono eyebrow/meta label style shared across sections.
+   Wrapped in @layer components so Tailwind utility classes (normal-case,
+   tracking-normal, text-*, etc.) placed alongside "eyebrow" in a className
+   still win — Tailwind v4's utilities layer otherwise always beats
+   unlayered styles regardless of source order. */
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+}

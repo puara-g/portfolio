@@ -4,7 +4,7 @@ import { skills } from "@/data/skills";
 export default function Skills() {
   return (
     <Section id="skills" eyebrow="02 · Skills" title="기술 스택">
-      <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
+      <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
         {skills.map((category) => (
           <div key={category.title} className="bg-bg p-6">
             <h3 className="text-base font-medium text-text">

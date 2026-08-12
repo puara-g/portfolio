@@ -1,27 +1,79 @@
 import { ProjectDetail } from "./types";
 
-// TODO: 실제 프로젝트로 교체하세요. slug는 URL(/projects/[slug])에 사용됩니다.
 export const projects: ProjectDetail[] = [
   {
-    slug: "sample-project",
-    name: "프로젝트 이름",
-    period: "0000.00 — 0000.00",
-    team: "1인 개인 프로젝트",
-    tagline: "프로젝트를 한 줄로 설명하는 문구",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    slug: "maum-library",
+    name: "마음서재",
+    period: "2026.05 — 2026.06",
+    team: "팀 프로젝트",
+    tagline: "도서 추천/독서 관리 서비스",
+    stack: ["React", "Tailwind CSS", "Google Books API"],
     links: {
-      live: "",
-      github: "",
-      readme: "", // README 문서로 연결 (없으면 버튼이 표시되지 않습니다)
-      video: "", // 시연 영상 (없으면 버튼이 표시되지 않습니다)
+      live: "https://maum-library-ecupf05sx-puara-gs-projects.vercel.app/",
+      github: "https://github.com/puara-g/maum-library",
     },
-    role: "본인의 역할을 적어주세요 (예: 기획부터 배포까지 단독 개발)",
-    problem: "어떤 문제를 해결하기 위해 시작했는지 설명하세요.",
+    role: "이영빈과 2인 팀으로 프론트엔드 전반을 함께 개발. 검색 디바운스, API 데이터 정규화, 로컬 스토리지 기반 내 서재·독서 시간 기능을 구현했습니다.",
+    problem:
+      "홈/이달의 신작/베스트셀러/기분 추천/검색까지 여러 화면에서 Google Books API를 반복 호출해야 했습니다. 검색창에 타이핑할 때마다 API를 그대로 호출하면 요청이 과도하게 발생했고, 외부 API 특성상 표지 이미지·줄거리 같은 필드가 종종 비어 있어 화면이 깨졌습니다. 또한 로그인 기능 없이도 '내 서재'와 독서 시간 데이터를 사용자별로 유지해야 했습니다.",
     approach: [
-      "문제를 풀기 위해 시도한 접근 방식을 bullet로 정리하세요.",
-      "기술적으로 고민했던 지점을 구체적으로 적어주세요.",
+      "헤더 검색 인풋에 setTimeout 기반 300ms 디바운스를 적용해, 입력마다 나가던 API 호출을 타이핑이 멈춘 시점 1회로 줄이고 이전 타이머는 clearTimeout으로 취소해 이전 요청과의 경쟁 상태를 방지했습니다.",
+      "API 응답을 표준 형태로 정리하는 normalizeBook과 공통 호출 함수 fetchBooks를 최상위 App 컴포넌트에 두고 신작/베스트셀러/기분 추천/검색 화면에서 공유해, 표지·줄거리 등이 비어 있을 때 <img onError>로 즉시 기본 커버 이미지로 대체되도록 통일했습니다.",
+      "장르별 베스트셀러는 useRef 캐시에 장르별 결과를 저장해 두어, 같은 탭을 다시 눌러도 재요청 없이 캐시된 데이터를 바로 보여주도록 했습니다.",
+      "'내 서재'(찜/독서중/완독)와 누적 독서 시간은 useState 초기값에서 LocalStorage를 읽고, useEffect로 값이 바뀔 때마다 다시 저장하는 방식으로 로그인 없이도 브라우저에 유지되게 했습니다.",
     ],
-    result: "결과물이나 성과, 배운 점을 정리하세요.",
+    result:
+      "타이핑 중 반복 호출되던 검색 API 요청을 입력이 끝난 시점 1회로 줄이고, 외부 데이터가 누락되어도 깨진 이미지 없이 항상 기본 커버가 표시되도록 만들어 화면 안정성을 높였습니다. 2인 팀에서 화면 전환·API 연동·상태 관리를 함께 구현했습니다.",
+    images: [],
+  },
+  {
+    slug: "miricanvas-clone",
+    name: "미리캔버스 클론",
+    period: "2026.06",
+    team: "1인 개인 프로젝트",
+    tagline: "웹 그래픽 에디터",
+    stack: ["React", "React-Konva", "HTML Canvas"],
+    links: {
+      live: "https://miricanvas-clone-pearl.vercel.app/",
+      github: "https://github.com/puara-g/miricanvas-clone",
+    },
+    role: "기획부터 배포까지 단독 개발",
+    problem:
+      "도형·텍스트 레이어를 추가/편집하는 캔버스 렌더링 로직과, 도구를 선택하는 좌측 패널 UI가 하나의 Canvas 컴포넌트 안에 함께 있어 파일이 커지고 책임이 뒤섞이는 구조적 문제가 있었습니다.",
+    approach: [
+      "도형 상태(rectangles/circles/texts)와 Konva Stage/Layer 렌더링을 담당하는 Canvas 컴포넌트에서, 도형·텍스트 추가 버튼과 탭 전환을 담당하는 좌측 패널을 Sidebar 컴포넌트로 분리했습니다.",
+      "Sidebar는 addRectangle/addCircle/addText 콜백만 props로 전달받아 자신의 활성 탭 상태(activeTab)만 직접 관리하도록 해, '캔버스 상태·렌더링'과 '도구 선택 UI'의 책임을 나눴습니다.",
+    ],
+    result:
+      "역할 기준으로 컴포넌트를 나눠 각 파일의 책임이 분명해졌고, 이후 Sidebar에 텍스트 탭을 추가하는 등 UI 확장이 쉬워졌습니다. 다만 각 도형을 memo 컴포넌트로 분리하거나 상태 변경 시 리렌더링 범위를 측정·최적화하는 작업은 아직 하지 않았고, 이 부분은 다음 개선 과제로 남아 있습니다.",
+    images: [],
+  },
+  {
+    slug: "ai-character-chat",
+    name: "AI Character Chat",
+    period: "2026.07",
+    team: "1인 개인 프로젝트",
+    tagline: "AI 캐릭터 대화 서비스",
+    stack: [
+      "Next.js 15+ (App Router)",
+      "JavaScript (ES6+)",
+      "Supabase (Auth/DB/Storage)",
+      "Google Gemini API",
+    ],
+    links: {
+      live: "https://ai-character-chat-2l7d13qif-puara-gs-projects.vercel.app",
+      github: "https://github.com/puara-g/ai-character-chat",
+    },
+    role: "기획부터 배포까지 단독 개발",
+    problem:
+      "캐릭터별 대화 맥락을 유지하려면 이전 대화 내용을 Gemini API에 함께 보내야 하는데, 세션이 길어질수록 매 요청에 실리는 대화 기록이 무한정 늘어날 수 있었습니다. 또한 사용자가 업로드하는 프로필 이미지가 용량이 크거나 이미지가 아닌 파일일 경우 Storage로 그대로 올라가는 문제가 있었습니다.",
+    approach: [
+      "Gemini API 요청 시 Supabase messages 테이블에서 해당 세션의 최근 10개 메시지만 불러와 history로 구성해(app/api/chat/route.js), 대화가 길어져도 요청 payload 크기가 일정 범위로 유지되도록 했습니다.",
+      "캐릭터의 이름·성격·말투·상세설정을 systemInstruction 문자열로 조합해 모델에 주입해, 캐릭터별 페르소나를 프롬프트 단에서 일관되게 유지했습니다.",
+      "이미지 업로드 시 클라이언트에서 먼저 파일 크기(2MB 이하)와 MIME 타입(image/*)을 검증한 뒤에만 Supabase Storage(avatars 버킷)에 업로드하고, 업로드가 실패하면 캐릭터 생성 자체를 막았습니다.",
+      "카카오톡 뷰를 벤치마킹해 뱃지/태그, 뒤로가기, 캐릭터 삭제가 가능한 모바일 퍼스트 UI를 구현하고, 삭제 버튼 클릭 시 채팅방 이동과 겹치지 않도록 이벤트 전파를 막았습니다.",
+    ],
+    result:
+      "대화 기록을 최근 10개로 제한해 세션이 길어져도 API 요청 크기를 일정하게 유지했고, 업로드 전 검증 단계를 둬 잘못된 파일이 Storage까지 올라가는 것을 막았습니다. 기획부터 Gemini/Supabase 연동, UI까지 전체를 혼자 구현했습니다.",
     images: [],
   },
 ];

@@ -6,7 +6,7 @@ import { IconDoc, IconExternal, IconGithub, IconImage, IconPlay } from "./icons"
 import ImageGalleryModal from "./ImageGalleryModal";
 
 const pillClass =
-  "eyebrow inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 normal-case tracking-normal text-text-muted transition-colors hover:border-accent hover:text-accent";
+  "eyebrow inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 normal-case tracking-normal text-text-muted transition-colors hover:border-accent hover:bg-accent-dim hover:text-accent";
 
 export default function ProjectActions({
   links,

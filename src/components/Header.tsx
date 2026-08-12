@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#certificates", label: "Certificates" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -34,7 +35,7 @@ export default function Header() {
 
         <a
           href={`mailto:${profile.email}`}
-          className="eyebrow rounded-full border border-border-strong px-3 py-1.5 text-text hover:border-accent hover:text-accent transition-colors"
+          className="rounded-full bg-accent px-4 py-1.5 text-sm font-medium text-accent-fg transition-colors hover:bg-accent/90"
         >
           Contact
         </a>

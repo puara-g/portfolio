@@ -15,7 +15,7 @@ export default function Footer() {
               href={profile.links.github}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-accent transition-colors"
+              className="eyebrow hover:text-accent transition-colors"
             >
               GitHub
             </a>
@@ -25,7 +25,7 @@ export default function Footer() {
               href={profile.links.notion}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-accent transition-colors"
+              className="eyebrow hover:text-accent transition-colors"
             >
               LinkedIn
             </a>

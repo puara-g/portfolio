@@ -22,6 +22,7 @@
   --color-accent: #2f5fd9;
   --color-accent-dim: #e8eefc;
   --color-accent-warm: #c9860b;
+  --color-accent-fg: #ffffff;
 }
 
 @theme inline {
@@ -36,6 +37,7 @@
   --color-accent: var(--color-accent);
   --color-accent-dim: var(--color-accent-dim);
   --color-accent-warm: var(--color-accent-warm);
+  --color-accent-fg: var(--color-accent-fg);
 
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -97,5 +99,23 @@ body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text-muted);
+  }
+
+  /* Soft two-tone wash behind the hero, built from the site's own accent
+     tokens so it reads as "the same palette, turned up" rather than a new
+     brand color. Kept low-opacity to preserve the quiet-editor identity. */
+  .hero-gradient {
+    background:
+      radial-gradient(
+        50% 45% at 12% 0%,
+        color-mix(in srgb, var(--color-accent) 22%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        40% 38% at 100% 8%,
+        color-mix(in srgb, var(--color-accent-warm) 18%, transparent),
+        transparent 70%
+      ),
+      var(--color-bg);
   }
 }

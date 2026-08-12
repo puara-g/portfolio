@@ -38,3 +38,8 @@ export type ProjectDetail = ProjectSummary & {
   approach: string[];
   result: string;
 };
+
+export type Certificate = {
+  name: string;
+  date: string; // e.g. "2026.04.04"
+};

@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="05 · Contact"
+      eyebrow="06 · Contact"
       title="연락하기"
       description="협업 제안이나 궁금한 점이 있다면 편하게 연락 주세요."
     >
@@ -18,7 +18,7 @@ export default function Contact() {
         </a>
         <a
           href={`mailto:${profile.email}`}
-          className="eyebrow shrink-0 rounded-full border border-border-strong px-5 py-2.5 text-text transition-colors hover:border-accent hover:text-accent"
+          className="shrink-0 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-fg transition-colors hover:bg-accent/90"
         >
           이메일 보내기
         </a>

@@ -39,7 +39,7 @@ export default function ProjectCard({ project }: { project: ProjectSummary }) {
         <ProjectActions links={project.links} images={project.images} />
         <Link
           href={`/projects/${project.slug}`}
-          className="eyebrow shrink-0 text-text-muted transition-colors hover:text-accent"
+          className="eyebrow shrink-0 font-semibold text-accent transition-colors hover:text-accent/80"
         >
           상세 보기 →
         </Link>

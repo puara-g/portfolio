@@ -8,6 +8,9 @@ import ImageGalleryModal from "./ImageGalleryModal";
 const pillClass =
   "eyebrow inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 normal-case tracking-normal text-text-muted transition-colors hover:border-accent hover:bg-accent-dim hover:text-accent";
 
+const livePillClass =
+  "eyebrow inline-flex items-center gap-1.5 rounded-full border border-accent bg-accent px-3 py-1.5 normal-case tracking-normal text-accent-fg transition-colors hover:bg-accent/90";
+
 export default function ProjectActions({
   links,
   images,
@@ -72,7 +75,7 @@ export default function ProjectActions({
           target="_blank"
           rel="noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className={pillClass}
+          className={livePillClass}
         >
           <IconExternal className="h-3.5 w-3.5" />
           배포

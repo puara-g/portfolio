@@ -3,7 +3,7 @@ import { certificates } from "@/data/certificates";
 
 export default function Certificates() {
   return (
-    <Section id="certificates" eyebrow="05 · Certificates" title="자격증">
+    <Section id="certificates" eyebrow="04 · Certificates" title="자격증">
       <ul className="flex flex-col divide-y divide-border border-t border-border">
         {certificates.map((cert) => (
           <li

@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      eyebrow="04 · Projects"
+      eyebrow="03 · Projects"
       title="프로젝트"
       description="카드를 클릭하면 상세 페이지로 이동합니다."
     >

@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="06 · Contact"
+      eyebrow="05 · Contact"
       title="연락하기"
       description="협업 제안이나 궁금한 점이 있다면 편하게 연락 주세요."
     >

@@ -4,16 +4,6 @@ export type SkillCategory = {
   items: string[];
 };
 
-export type ExperienceEntry = {
-  company: string;
-  role: string;
-  period: string; // e.g. "2024.03 — 현재"
-  location?: string;
-  summary: string;
-  stack: string[];
-  highlights: string[];
-};
-
 export type ProjectLinks = {
   live?: string;
   github?: string;

@@ -11,7 +11,6 @@ export const skills: SkillCategory[] = [
       "HTML5",
       "CSS",
       "Tailwind CSS",
-      "Canvas API (React-Konva)",
     ],
   },
   {

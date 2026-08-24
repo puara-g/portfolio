@@ -59,6 +59,11 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  /* 한글은 기본적으로 음절(글자) 단위로 줄바꿈되어 "풀스택"이 "풀스/택"처럼
+     단어 중간에서 잘리는 문제가 생긴다. keep-all로 어절(공백) 단위 줄바꿈을
+     우선하고, 공백 없이 긴 토큰(URL 등)은 overflow-wrap로 여전히 감싸지게 한다. */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 ::selection {

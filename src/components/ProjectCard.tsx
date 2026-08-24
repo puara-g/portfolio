@@ -35,11 +35,11 @@ export default function ProjectCard({ project }: { project: ProjectSummary }) {
         ))}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
         <ProjectActions links={project.links} images={project.images} />
         <Link
           href={`/projects/${project.slug}`}
-          className="eyebrow shrink-0 font-semibold text-accent transition-colors hover:text-accent/80"
+          className="eyebrow shrink-0 font-bold text-accent transition-colors hover:text-accent/80"
         >
           상세 보기 →
         </Link>

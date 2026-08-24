@@ -27,7 +27,7 @@ export default function Footer() {
               rel="noreferrer"
               className="eyebrow hover:text-accent transition-colors"
             >
-              LinkedIn
+              Notion
             </a>
           )}
         </div>

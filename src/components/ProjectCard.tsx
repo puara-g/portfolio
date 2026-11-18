@@ -24,6 +24,12 @@ export default function ProjectCard({ project }: { project: ProjectSummary }) {
 
       <p className="text-sm text-text-muted">{project.tagline}</p>
 
+      {project.award && (
+        <p className="eyebrow w-fit rounded-md border border-accent/50 bg-accent/10 px-2 py-1 font-bold normal-case tracking-normal text-accent">
+          {project.award.title} 수상
+        </p>
+      )}
+
       <div className="flex flex-wrap gap-2">
         {project.stack.map((tech) => (
           <span

@@ -46,6 +46,16 @@ export default async function ProjectDetailPage({
           </div>
         </dl>
 
+        {project.award && (
+          <div className="mt-6 rounded-lg border border-accent/50 bg-accent/10 px-4 py-3">
+            <p className="eyebrow font-bold text-accent">
+              {project.award.title} 수상
+              {project.award.date && ` · ${project.award.date}`}
+            </p>
+            <p className="mt-1 text-sm text-text">{project.award.contest}</p>
+          </div>
+        )}
+
         <div className="mt-6">
           <ProjectActions links={project.links} images={project.images} />
         </div>

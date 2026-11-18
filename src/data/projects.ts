@@ -20,6 +20,11 @@ export const projects: ProjectDetail[] = [
       live: "https://bin-right.vercel.app",
       github: "https://github.com/puara-g/BinRight",
     },
+    award: {
+      title: "최우수상",
+      contest:
+        "배화여자대학교 2026학년도 같이(Together), 가치(Value)! 사회적 공헌 활동 교내 공모전",
+    },
     role: "2인 팀으로 기획부터 배포까지 함께 개발",
     problem:
       "쓰레기 배출 요일·방법은 동네마다 다르고, 공공데이터포털의 생활쓰레기배출정보는 \"일+월+화\", \"월~금\", \"매일\"처럼 지자체마다 표기가 제각각인 데다 같은 구역의 옛 버전 데이터가 섞여 내려왔습니다. 주민센터의 재활용품 교환 사업(우유팩→화장지 등)은 아예 정형 데이터가 없었고, Vercel 서버리스 환경은 파일 저장이 안 되고 인스턴스가 자주 새로 떠서 외부 API 결과를 캐시하기 어려웠습니다.",

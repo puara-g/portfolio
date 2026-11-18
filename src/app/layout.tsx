@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 // TODO: 실제 이름/설명으로 교체하세요.
 export const metadata: Metadata = {
-  title: "김가현 | 프론트엔드 개발자",
+  title: "김가현 | 포트폴리오",
   description: "프론트엔드 개발자 김가현의 포트폴리오입니다.",
 };
 

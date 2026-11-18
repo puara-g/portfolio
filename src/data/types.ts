@@ -20,6 +20,13 @@ export type ProjectSummary = {
   stack: string[];
   links?: ProjectLinks;
   images?: string[]; // 갤러리 모달에 띄울 이미지 경로/URL
+  award?: ProjectAward;
+};
+
+export type ProjectAward = {
+  title: string; // e.g. "최우수상"
+  contest: string; // 대회/공모전 이름
+  date?: string; // e.g. "2026.11"
 };
 
 export type ProjectDetail = ProjectSummary & {

@@ -16,6 +16,24 @@ export default function ProjectCard({ project }: { project: ProjectSummary }) {
           <p className="eyebrow mt-1 normal-case tracking-normal">
             {project.team}
           </p>
+          {project.award && (
+            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent-warm px-3 py-1 text-sm font-bold text-text">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4Z" />
+                <path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3" />
+              </svg>
+              {project.award.title} 수상
+            </p>
+          )}
         </div>
         <span className="eyebrow shrink-0 pt-1 text-text-faint">
           {project.period}
@@ -23,12 +41,6 @@ export default function ProjectCard({ project }: { project: ProjectSummary }) {
       </div>
 
       <p className="text-sm text-text-muted">{project.tagline}</p>
-
-      {project.award && (
-        <p className="eyebrow w-fit rounded-md border border-accent/50 bg-accent/10 px-2 py-1 font-bold normal-case tracking-normal text-accent">
-          {project.award.title} 수상
-        </p>
-      )}
 
       <div className="flex flex-wrap gap-2">
         {project.stack.map((tech) => (

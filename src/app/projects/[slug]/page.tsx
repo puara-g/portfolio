@@ -47,8 +47,8 @@ export default async function ProjectDetailPage({
         </dl>
 
         {project.award && (
-          <div className="mt-6 rounded-lg border border-accent/50 bg-accent/10 px-4 py-3">
-            <p className="eyebrow font-bold text-accent">
+          <div className="mt-6 rounded-lg border border-yellow-400 bg-yellow-100 px-4 py-3">
+            <p className="eyebrow font-bold text-yellow-900">
               {project.award.title} 수상
               {project.award.date && ` · ${project.award.date}`}
             </p>

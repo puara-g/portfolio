@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: ProjectSummary }) {
             {project.team}
           </p>
           {project.award && (
-            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-accent-warm px-3 py-1 text-sm font-bold text-text">
+            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-yellow-300 px-3 py-1 text-sm font-bold text-yellow-950">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
